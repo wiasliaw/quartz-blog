@@ -44,6 +44,8 @@ plugins:
     enabled: true
     options:
       defaultDateType: modified
+      # Frontmatter only: Cloudflare Pages clones the content submodule at build time,
+      # so git/filesystem timestamps reflect the build, not when a post was written.
       priority:
         - frontmatter
     order: 10
