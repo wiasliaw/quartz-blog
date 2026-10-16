@@ -1,8 +1,8 @@
 # quartz-blog
 
 Personal blog at https://wiasliaw.io, built with Quartz v5 and deployed by Cloudflare Pages from the `release` branch.
-Posts live in the `content/` git submodule (`wiasliaw/blog-content`); do not edit posts in this repo.
-Publishing new posts = commit an updated `content` submodule pointer to `release` and push.
+Posts live as plain files in `content/` (copied from `wiasliaw/blog-content` at 42399f4; no longer a submodule).
+Publishing new posts = add or edit files under `content/`, commit to `release`, and push.
 
 ## Updating Quartz v5
 
@@ -26,4 +26,4 @@ Only these files are site-specific; everything else is upstream-owned and must s
 - `quartz.config.yaml` — site config, theme, plugins, layout
 - `quartz/styles/custom.scss` — CSS overrides
 - `quartz/static/` — icon, OG image, giscus themes
-- `.gitmodules`, `content` — submodule pointer
+- `content/` — posts and assets
