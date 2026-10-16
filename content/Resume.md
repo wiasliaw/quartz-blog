@@ -11,10 +11,14 @@ updated: 2026-10-17, 02:14
 ## Experience
 
 ### Independent
-*One-person dev (Taipei, 2026/07 – now)*
-- Running my own one-person company, ceci-labs.
-- Building [open-skills](https://github.com/wiasliaw/open-skills), a set of skills for coding agents: `use-worktree` gives each agent session its own git worktree, `graph-init` and `graph-run` set up and run a task graph. These three live on the `milestone/graph-engineering` branch.
-- Writing about the tools I use, e.g. [git worktree：一人開發的平行工作目錄](https://wiasliaw.io/articles/git_worktree).
+*Independent Developer (Taipei, 2026/07 – now)*
+- Built open-skills, an open-source Claude Code plugin with six skills for coding agents.
+- Built a code review pipeline: three reviewers check a change in parallel, each finding is verified against the code before it is reported, and the result is ranked by severity with a verdict on the design.
+- Built a skill that handles PR/MR review comments on GitHub and GitLab: checks each comment against the code, fixes the valid ones and drafts rebuttals with evidence for the rest.
+- Built an interactive codebase walkthrough that reads code in a git worktree pinned to a commit, cites every stop as `file:line`, and saves a reading record.
+- Built a harness for agent development: `init` scaffolds the project's CLAUDE.md and long-term memory, `harness-flow` dispatches work to an implementor agent and marks it done only after a reviewer agent passes it, `handoff` saves decisions, dead ends and next steps so a fresh session can resume.
+- Published an article on using git worktree to run parallel development, including multiple coding agent sessions on one repo.
+- Stack: Claude Code plugins, agent skills, subagents, Git, GitHub CLI, GitLab CLI
 
 ### BSOS - Isle Finance
 *Blockchain Developer (Remote, 2025/08 – 2026/06)*
@@ -38,21 +42,6 @@ updated: 2026-10-17, 02:14
 - Introduced an upgradeable architecture so the team could iterate without redeploying.
 - Built ERC20 staking systems and an ERC721 marketplace.
 - Stack: Solidity, Foundry, Hardhat, ERC20, ERC721, Upgradeable Proxy (Transparent/UUPS)
-
----
-
-## Education
-
-### National Cheng Kung University
-*B.S. in Computer Science and Information Engineering (2016/09 – 2022/01)*
-
----
-
-## Skills
-
-- Languages: Solidity, Huff, TypeScript, Rust
-- Tools: Foundry, Hardhat, Slither, Echidna, Halmos
-- Concepts: smart contract development, security, upgradeable patterns, formal verification, DeFi, RWA
 
 ---
 
