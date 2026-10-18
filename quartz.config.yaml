@@ -14,31 +14,37 @@ configuration:
   theme:
     fontOrigin: googleFonts
     cdnCaching: true
+    # Core fonts load the CJK fallbacks of the design-system stacks and feed
+    # og-image rendering (plain family names required). Latin faces (Fraunces,
+    # Inter, JetBrains Mono axes) are loaded by quartz-fonts below.
     typography:
-      header: Noto Sans TC
+      header: Noto Serif TC
       body: Noto Sans TC
-      code: IBM Plex Mono
+      code: JetBrains Mono
+    # Colors map the wiasliaw design system onto Quartz variables
+    # (light = sand/umber/hydrangea, dark = Studio Home v2 dark theme).
+    # custom.scss layers the full token set on top.
     colors:
       lightMode:
-        light: "#ffffff"
-        lightgray: "#f2f0ed"
-        gray: "#d5cdc5"
-        darkgray: "#707080"
-        dark: "#2a2520"
-        secondary: "#b37a50"
-        tertiary: "#d9a67a"
-        highlight: rgba(216, 196, 174, 0.2)
-        textHighlight: "#cc855588"
+        light: "#F4EDE1"
+        lightgray: "#EBE0CC"
+        gray: "#89786E"
+        darkgray: "#464139"
+        dark: "#2E2B25"
+        secondary: "#6F5679"
+        tertiary: "#523D5B"
+        highlight: "#EEE6EC"
+        textHighlight: "#D8CAD5"
       darkMode:
-        light: "#16151a"
-        lightgray: "#222024"
-        gray: "#484450"
-        darkgray: "#b0b0c0"
-        dark: "#f0ede8"
-        secondary: "#c89270"
-        tertiary: "#a57a5a"
-        highlight: rgba(174, 142, 116, 0.25)
-        textHighlight: "#d9a67a88"
+        light: "#231F1A"
+        lightgray: "#2E2B25"
+        gray: "#89786E"
+        darkgray: "#F4EDE1"
+        dark: "#F9F5EF"
+        secondary: "#C7B2C2"
+        tertiary: "#D8CAD5"
+        highlight: "#29192F"
+        textHighlight: "#523D5B"
 plugins:
   - source: "@quartz-community/created-modified-date"
     enabled: true
@@ -53,8 +59,8 @@ plugins:
     enabled: true
     options:
       theme:
-        light: catppuccin-latte
-        dark: catppuccin-frappe
+        light: kanagawa-lotus
+        dark: kanagawa-dragon
       keepBackground: false
     order: 20
   - source: "@quartz-community/obsidian-flavored-markdown"
@@ -100,6 +106,26 @@ plugins:
     order: 92
   - source: "@quartz-community/quartz-fonts"
     enabled: true
+    # Each name carries a full Google Fonts axes spec. With one weight and no
+    # italic, the plugin passes the name through unchanged, which loads the
+    # variable axes (opsz/SOFT/WONK) the design system needs. The plugin also
+    # writes these raw names into its font variables and h1-h6 rules; browsers
+    # drop them as invalid. Font-family stacks live in custom.scss (--font-*).
+    options:
+      fontOrigin: googleFonts
+      useThemeFonts: false
+      header:
+        name: "Fraunces:ital,opsz,wght,SOFT,WONK@0,9..144,300..700,0..100,0..1;1,9..144,300..700,0..100,0..1"
+        weights: [400]
+        includeItalic: false
+      body:
+        name: "Inter:wght@300..700"
+        weights: [400]
+        includeItalic: false
+      code:
+        name: "JetBrains Mono:ital,wght@0,400..700;1,400..700"
+        weights: [400]
+        includeItalic: false
   - source: "@quartz-themes/core"
     enabled: false
     options:
