@@ -1045,10 +1045,14 @@ a.internal.tag-link {
 }
 
 .explorer-content {
+  ul li {
+    margin: var(--space-1) 0;
+  }
+
   ul li > a {
     @include muted-link;
     opacity: 1;
-    font: var(--type-small);
+    font: var(--fw-regular) var(--fs-body) / 1.7 var(--font-sans);
 
     &.active {
       color: var(--text-accent);
@@ -1064,7 +1068,7 @@ a.internal.tag-link {
   div > a,
   div > button span {
     color: var(--text-primary);
-    font: var(--fw-medium) var(--fs-small) / 1.7 var(--font-sans);
+    font: var(--fw-medium) var(--fs-body) / 1.7 var(--font-sans);
     text-decoration: none;
   }
 
